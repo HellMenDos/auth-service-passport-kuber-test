@@ -1,0 +1,13 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: nestjs-deployment
+spec:
+  selector:
+    matchLabels:
+      app: nestjs-deployment
+  namespaceSelector:
+    matchNames:
+    - default
+  endpoints:
+  - port: web
